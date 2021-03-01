@@ -83,4 +83,39 @@ function executeSearch ()  {
  getForecast().then(weather => drawWeather(weather));
   return false;
 }
+function myweatherinfo(){
+  const checkbox=document.getElementById("weather_info");
+  const text=document.getElementById("weather");
+  const othertext=document.getElementById("venues");
+  if(checkbox.checked==true){
+    text.style.visibility="visible";
+    othertext.style.visibility="hidden";
+  }
+  else{
+    text.style.visibility="hidden";
+    othertext.style.visibility="hidden";
+  }
+} 
+function myvenueinfo(){
+  const checkbox=document.getElementById("venue_info");
+  const text=document.getElementById("venues");
+  const othertext=document.getElementById("weather");
+  if(checkbox.checked==true){
+    text.style.visibility="visible";
+    othertext.style.visibility="hidden";
+  }
+  else{
+    text.style.visibility="hidden";
+    othertext.style.visibility="hidden";
+  }
+}
+
+function myalfaorder(){
+  venues.sort(function(x,y){
+    let a=x.name.toUpperCase(),
+    b=y.name.toUpperCase();
+    return a == b ? 0 : a > b ? 1 : -1;
+  });
+  
+}
 
